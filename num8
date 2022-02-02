@@ -1,0 +1,29 @@
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+void not_dfs(AGraph &N, int verh)
+{
+    int m;
+    InitStack(W);
+    for (i = 0; i < N.vexnum, i++)
+    {
+        visited[i] = false;
+    }
+    Push(W, verh);
+    visited[verh] = true;
+    while (!IsEmpty(W))
+    {
+        line = Pop(W);
+        visit(line);
+        for (m = FirstNeighbor(N, line); m >= 0; m = NextNeighbor(N, line, m))
+        {
+            if(!visited[m])
+            {
+                Push(W, m);
+                visited[m] = true;
+            }
+        }
+    }
+}
